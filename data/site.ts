@@ -9,9 +9,7 @@ export const profile = {
 };
 
 export const about = [
-  "By day I run engineering at Mention Me, a referral and advocacy platform in London. \"Run\" is doing light work there: I'm responsible for a 12-engineer org, but 70% of my week is still shipping, and I'm disappointed if I don't get three to five PRs out in a day. I won't run an org I couldn't code in.",
-  "I joined on the literal first day of UK lockdown in March 2020 and spent my first 18 months having met only the founders in person. Since then I've gone from software engineer to tech lead to Head of Engineering, and spent the last year rebuilding our entire development lifecycle around AI agents. Output per engineer has roughly tripled. Yes, I measured it.",
-  "Away from the keyboard I'm a long-suffering (recently less suffering) Liverpool FC fan, dad to two daughters, and a carp angler of moderate distinction. I live in Kent, I'm usually online from 8am to 8pm, and I vanish for school runs: I like being the dad who's always there while I can be.",
+  "I run engineering at Mention Me, a referral and advocacy platform in London: a 12-engineer org, though 70% of my week is still shipping code. I won't run an org I couldn't code in. The last year I rebuilt our development lifecycle around AI agents and roughly tripled output per engineer; yes, I measured it. Away from the keyboard: Liverpool FC, two daughters, and carp fishing in Kent.",
 ];
 
 export type Role = {
