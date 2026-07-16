@@ -39,6 +39,9 @@ export function EasterEggs() {
     console.log(
       "Two more easter eggs: one belongs to a certain football club (you know the code), and one is the name of a certain fish. Source: https://github.com/joesaunderson/joesaunderson",
     );
+    console.log(
+      "P.S. On the lake, window.__lake is the whole game state. Scripting your way to a personal best is cheating, but I'd respect it.",
+    );
   }, []);
 
   useEffect(() => {
