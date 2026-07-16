@@ -80,12 +80,6 @@ export const projects: Project[] = [
       "A prioritisation lens on Linear: teams pull in initiatives, score them async with RICE-style frameworks, reveal with divergence analysis, and publish the ranking back. Live SaaS with free and paid plans.",
   },
   {
-    name: "PostHog",
-    url: "https://github.com/PostHog/posthog",
-    description:
-      "Contributor to the open-source product analytics platform I also run in production.",
-  },
-  {
     name: "BetHero",
     description:
       "Models the probability of sports betting market outcomes from live data feeds.",
