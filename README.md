@@ -1,6 +1,6 @@
 # Joe Saunderson
 
-Head of Engineering at [Mention Me](https://www.mention-me.com). I run a 12-engineer org and still ship 70% of the time. I won't run an org I couldn't code in.
+Head of Engineering at [Mention Me](https://www.mention-me.com). I run a 12-engineer org and still ship 70% of the time.
 
 **TL;DR: I like to get shit done.**
 

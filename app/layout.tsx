@@ -27,8 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className="antialiased">
-      <body className="isolate bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <html
+      lang="en-GB"
+      className="antialiased scheme-light-dark motion-safe:scroll-smooth"
+    >
+      <body className="isolate bg-canvas text-ink">
         <Spotlight />
         {children}
         <EasterEggs />

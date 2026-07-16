@@ -9,7 +9,7 @@ export const profile = {
 };
 
 export const about = [
-  "I run engineering at Mention Me, a referral and advocacy platform in London: a 12-engineer org, though 70% of my week is still shipping code. I won't run an org I couldn't code in. The last year I rebuilt our development lifecycle around AI agents and roughly tripled output per engineer; yes, I measured it. Away from the keyboard: Liverpool FC, two daughters, and carp fishing in Kent.",
+  "I run engineering at Mention Me, a referral and advocacy platform in London: a 12-engineer org, though 70% of my week is still shipping code. The last year I rebuilt our development lifecycle around AI agents and roughly tripled output per engineer; yes, I measured it. Away from the keyboard: Liverpool FC, two daughters, and carp fishing in Kent.",
 ];
 
 export type Role = {

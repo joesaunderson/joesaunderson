@@ -13,10 +13,10 @@ export default function BioPage() {
     <div className="py-16 sm:py-24">
       <main className="mx-auto max-w-2xl px-6">
         <header>
-          <p className="font-mono text-sm font-medium tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+          <p className="font-mono text-sm font-medium tracking-wide text-ink-muted uppercase">
             <Link
               href="/"
-              className="hover:text-neutral-900 dark:hover:text-neutral-100"
+              className="hover:text-ink"
             >
               Joe Saunderson
             </Link>{" "}
@@ -25,7 +25,7 @@ export default function BioPage() {
           <h1 className="mt-4 max-w-[24ch] text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
             The unabridged version
           </h1>
-          <p className="mt-6 max-w-[48ch] text-lg text-pretty text-neutral-600 dark:text-neutral-400">
+          <p className="mt-6 max-w-[48ch] text-lg text-pretty text-ink-muted">
             {bioTldr}
           </p>
         </header>
@@ -35,7 +35,7 @@ export default function BioPage() {
             {bioIntro.map((paragraph) => (
               <p
                 key={paragraph.slice(0, 32)}
-                className="max-w-[64ch] text-base/7 text-pretty text-neutral-700 dark:text-neutral-300"
+                className="max-w-[64ch] text-base/7 text-pretty text-ink-soft"
               >
                 {paragraph}
               </p>
@@ -44,10 +44,10 @@ export default function BioPage() {
         </section>
 
         <section className="mt-16">
-          <h2 className="font-mono text-sm font-medium tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+          <h2 className="font-mono text-sm font-medium tracking-wide text-ink-muted uppercase">
             Readme
           </h2>
-          <p className="mt-6 max-w-[64ch] text-base/7 text-pretty text-neutral-700 dark:text-neutral-300">
+          <p className="mt-6 max-w-[64ch] text-base/7 text-pretty text-ink-soft">
             The section below is lifted from the readme I share with new
             colleagues: how I work, what to expect, and where I need help.
             Published here in the spirit of working in the open.
@@ -61,7 +61,7 @@ export default function BioPage() {
                 {section.paragraphs?.map((paragraph) => (
                   <p
                     key={paragraph.slice(0, 32)}
-                    className="mt-4 max-w-[64ch] text-base/7 text-pretty text-neutral-700 dark:text-neutral-300"
+                    className="mt-4 max-w-[64ch] text-base/7 text-pretty text-ink-soft"
                   >
                     {paragraph}
                   </p>
@@ -69,7 +69,7 @@ export default function BioPage() {
                 {section.items && (
                   <ul
                     role="list"
-                    className="mt-4 max-w-[64ch] space-y-3 text-base/7 text-neutral-700 dark:text-neutral-300"
+                    className="mt-4 max-w-[64ch] space-y-3 text-base/7 text-ink-soft"
                   >
                     {section.items.map((item) => (
                       <li key={item.slice(0, 32)} className="flex gap-x-4">
@@ -89,11 +89,11 @@ export default function BioPage() {
           </div>
         </section>
 
-        <footer className="mt-20 border-t border-neutral-950/10 pt-8 dark:border-white/10">
-          <p className="font-mono text-base text-neutral-500 sm:text-sm dark:text-neutral-400">
+        <footer className="mt-20 border-t border-ink/10 pt-8">
+          <p className="font-mono text-base text-ink-muted sm:text-sm">
             <Link
               href="/"
-              className="underline decoration-neutral-300 underline-offset-4 hover:decoration-accent dark:decoration-neutral-600 dark:hover:decoration-accent"
+              className="underline decoration-ink/25 underline-offset-4 hover:decoration-accent"
             >
               Back home
             </Link>

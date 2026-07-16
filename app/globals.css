@@ -9,12 +9,20 @@
 }
 
 :root {
-  --accent: var(--color-orange-700);
+  --canvas: var(--color-stone-50);
+  --ink: var(--color-stone-900);
+  --ink-soft: var(--color-stone-700);
+  --ink-muted: var(--color-stone-500);
+  --accent: var(--color-teal-700);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --accent: var(--color-orange-400);
+    --canvas: oklch(19% 0.02 250);
+    --ink: oklch(93% 0.008 240);
+    --ink-soft: oklch(83% 0.012 240);
+    --ink-muted: oklch(68% 0.018 240);
+    --accent: var(--color-teal-300);
   }
 }
 
@@ -29,7 +37,15 @@
 }
 
 @theme inline {
+  --color-canvas: var(--canvas);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
   --color-accent: var(--accent);
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 30%, transparent);
 }
 
 @utility spotlight {

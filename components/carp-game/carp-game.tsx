@@ -1037,7 +1037,7 @@ export function CarpGame() {
           tabIndex={0}
           role="img"
           aria-label="Carp fishing game: a side-on view of a lake. Hold to charge a cast, click to strike when a fish takes the bait, then hold to reel it in."
-          className="w-full touch-none rounded-xl outline-offset-4 select-none"
+          className="w-full touch-none rounded-xl ring-1 ring-ink/10 outline-offset-4 select-none"
         />
       </div>
       <p aria-live="polite" className="sr-only">
@@ -1047,7 +1047,7 @@ export function CarpGame() {
       <div className="mt-4 flex flex-wrap items-center justify-between gap-x-8 gap-y-3">
         <dl className="flex flex-wrap gap-x-8 gap-y-3 font-mono">
           <div>
-            <dt className="text-xs tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+            <dt className="text-xs tracking-wide text-ink-muted uppercase">
               Level
             </dt>
             <dd className="mt-1 text-base font-medium tabular-nums">
@@ -1055,7 +1055,7 @@ export function CarpGame() {
             </dd>
           </div>
           <div>
-            <dt className="text-xs tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+            <dt className="text-xs tracking-wide text-ink-muted uppercase">
               XP
             </dt>
             <dd className="mt-1 text-base font-medium tabular-nums">
@@ -1063,7 +1063,7 @@ export function CarpGame() {
             </dd>
           </div>
           <div>
-            <dt className="text-xs tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+            <dt className="text-xs tracking-wide text-ink-muted uppercase">
               Session
             </dt>
             <dd className="mt-1 text-base font-medium tabular-nums">
@@ -1071,7 +1071,7 @@ export function CarpGame() {
             </dd>
           </div>
           <div>
-            <dt className="text-xs tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+            <dt className="text-xs tracking-wide text-ink-muted uppercase">
               Personal best
             </dt>
             <dd className="mt-1 text-base font-medium tabular-nums">
@@ -1083,20 +1083,20 @@ export function CarpGame() {
           type="button"
           onClick={() => setMuted((value) => !value)}
           aria-pressed={muted}
-          className="rounded-full border border-neutral-950/15 px-4 py-1.5 font-mono text-base hover:border-neutral-950/40 sm:text-sm dark:border-white/15 dark:hover:border-white/40"
+          className="rounded-full border border-ink/15 px-4 py-1.5 font-mono text-base hover:border-ink/40 sm:text-sm"
         >
           {muted ? "Unmute alarm" : "Mute alarm"}
         </button>
       </div>
 
       {stats.weirdest && (
-        <p className="mt-4 max-w-[60ch] font-mono text-base text-neutral-500 sm:text-sm dark:text-neutral-400">
+        <p className="mt-4 max-w-[60ch] font-mono text-base text-ink-muted sm:text-sm">
           Weirdest catch to date: {stats.weirdest.toLowerCase()}.
         </p>
       )}
 
-      <details className="mt-6 border-t border-neutral-950/10 pt-5 dark:border-white/10">
-        <summary className="cursor-pointer font-mono text-sm font-medium tracking-wide text-neutral-500 uppercase hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100">
+      <details className="mt-6 border-t border-ink/10 pt-5">
+        <summary className="cursor-pointer font-mono text-sm font-medium tracking-wide text-ink-muted uppercase hover:text-ink">
           The Carpdex ({caughtSpecies.length}/{CATCHES.length})
         </summary>
         <ul role="list" className="mt-4 space-y-2">
@@ -1113,12 +1113,12 @@ export function CarpGame() {
                       ? spec.kind === "legendary"
                         ? "text-accent"
                         : ""
-                      : "text-neutral-400 dark:text-neutral-600"
+                      : "text-ink-muted/70"
                   }
                 >
                   {count ? spec.name : "???"}
                 </span>
-                <span className="text-neutral-500 tabular-nums dark:text-neutral-400">
+                <span className="text-ink-muted tabular-nums">
                   {count ?? 0}
                 </span>
               </li>

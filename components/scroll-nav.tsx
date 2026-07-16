@@ -39,7 +39,7 @@ export function ScrollNav() {
                 className={`group flex items-center gap-x-4 font-mono text-xs tracking-wide uppercase ${
                   isActive
                     ? "text-accent"
-                    : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+                    : "text-ink-muted hover:text-ink"
                 }`}
               >
                 <span
@@ -47,7 +47,7 @@ export function ScrollNav() {
                   className={`h-px transition-all ${
                     isActive
                       ? "w-16 bg-accent"
-                      : "w-8 bg-neutral-950/20 group-hover:w-16 group-hover:bg-neutral-950/40 dark:bg-white/20 dark:group-hover:bg-white/40"
+                      : "w-8 bg-ink/25 group-hover:w-16 group-hover:bg-ink/50"
                   }`}
                 />
                 {section.label}

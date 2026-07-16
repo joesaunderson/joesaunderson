@@ -88,7 +88,7 @@ export function EasterEggs() {
       className="pointer-events-none fixed inset-x-0 bottom-6 z-10 flex justify-center px-6"
     >
       {toast && (
-        <p className="rounded-full bg-accent px-4 py-2 font-mono text-base text-white sm:text-sm dark:text-neutral-950">
+        <p className="rounded-full bg-accent px-4 py-2 font-mono text-base text-canvas sm:text-sm">
           {toast}
         </p>
       )}

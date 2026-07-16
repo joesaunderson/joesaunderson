@@ -14,10 +14,10 @@ export default function FishingPage() {
     <div className="py-16 sm:py-24">
       <main className="mx-auto max-w-3xl px-6">
         <header>
-          <p className="font-mono text-sm font-medium tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+          <p className="font-mono text-sm font-medium tracking-wide text-ink-muted uppercase">
             <Link
               href="/"
-              className="hover:text-neutral-900 dark:hover:text-neutral-100"
+              className="hover:text-ink"
             >
               Joe Saunderson
             </Link>{" "}
@@ -26,18 +26,18 @@ export default function FishingPage() {
           <h1 className="mt-4 max-w-[24ch] text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
             You found the lake.
           </h1>
-          <p className="mt-6 max-w-[48ch] text-lg text-pretty text-neutral-600 dark:text-neutral-400">
+          <p className="mt-6 max-w-[48ch] text-lg text-pretty text-ink-muted">
             This is where I am when the laptop lid is shut. Hold to charge a
             cast, strike when the alarm screams, then keep the tension out of
             the red. The lake is infinite. The lake is mostly carp. Mostly.
           </p>
         </header>
         <CarpGame />
-        <footer className="mt-20 border-t border-neutral-950/10 pt-8 dark:border-white/10">
-          <p className="font-mono text-base text-neutral-500 sm:text-sm dark:text-neutral-400">
+        <footer className="mt-20 border-t border-ink/10 pt-8">
+          <p className="font-mono text-base text-ink-muted sm:text-sm">
             <Link
               href="/"
-              className="underline decoration-neutral-300 underline-offset-4 hover:decoration-accent dark:decoration-neutral-600 dark:hover:decoration-accent"
+              className="underline decoration-ink/25 underline-offset-4 hover:decoration-accent"
             >
               Back to work
             </Link>
