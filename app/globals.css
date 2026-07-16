@@ -7,3 +7,35 @@
   --font-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", monospace;
 }
+
+:root {
+  --accent: var(--color-orange-700);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: var(--color-orange-400);
+  }
+}
+
+:root.liverpool {
+  --accent: var(--color-red-700);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root.liverpool {
+    --accent: var(--color-red-400);
+  }
+}
+
+@theme inline {
+  --color-accent: var(--accent);
+}
+
+@utility spotlight {
+  background: radial-gradient(
+    600px circle at var(--spotlight-x, 50%) var(--spotlight-y, 30%),
+    color-mix(in oklab, var(--accent) 5%, transparent),
+    transparent 80%
+  );
+}

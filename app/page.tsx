@@ -1,15 +1,10 @@
-import {
-  about,
-  career,
-  education,
-  opinions,
-  profile,
-  projects,
-} from "../data/site";
+import Link from "next/link";
+import { ScrollNav } from "../components/scroll-nav";
+import { about, career, education, profile, projects } from "../data/site";
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="font-mono text-sm font-medium tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+    <h2 className="font-mono text-sm font-medium tracking-wide text-neutral-500 uppercase lg:sr-only dark:text-neutral-400">
       {children}
     </h2>
   );
@@ -27,45 +22,73 @@ function ExternalLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-600 dark:decoration-neutral-600 dark:hover:decoration-neutral-300"
+      className="underline decoration-neutral-300 underline-offset-4 hover:decoration-accent dark:decoration-neutral-600 dark:hover:decoration-accent"
     >
       {children}
     </a>
   );
 }
 
+function TechList({ tech }: { tech: string[] }) {
+  if (tech.length === 0) return null;
+  return (
+    <ul role="list" className="mt-4 flex flex-wrap gap-2">
+      {tech.map((item) => (
+        <li
+          key={item}
+          className="rounded-full bg-accent/10 px-3 py-1 font-mono text-xs text-accent"
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function Home() {
   return (
-    <div className="py-16 sm:py-24">
-      <main className="mx-auto max-w-2xl px-6">
-        <header>
-          <p className="font-mono text-sm font-medium tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
-            {profile.role} · {profile.company} · {profile.location}
-          </p>
-          <h1 className="mt-4 max-w-[24ch] text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
+    <div className="mx-auto max-w-6xl px-6 lg:flex lg:gap-x-20">
+      <header className="pt-16 sm:pt-24 lg:sticky lg:top-0 lg:flex lg:h-dvh lg:w-2/5 lg:flex-col lg:justify-between lg:py-24">
+        <div>
+          <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
             {profile.name}
           </h1>
-          <p className="mt-6 max-w-[48ch] text-lg text-pretty text-neutral-600 dark:text-neutral-400">
+          <p className="mt-3 text-lg font-medium text-pretty">{profile.role}</p>
+          <p className="mt-4 max-w-[36ch] text-lg text-pretty text-neutral-600 dark:text-neutral-400">
             {profile.tagline}
           </p>
-          <ul role="list" className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
-            <li className="font-mono text-base sm:text-sm">
-              <ExternalLink href={profile.github}>GitHub</ExternalLink>
-            </li>
-            <li className="font-mono text-base sm:text-sm">
-              <a
-                href={`mailto:${profile.email}`}
-                className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-600 dark:decoration-neutral-600 dark:hover:decoration-neutral-300"
-              >
-                Email
-              </a>
-            </li>
-          </ul>
-        </header>
+          <ScrollNav />
+        </div>
+        <ul
+          role="list"
+          className="mt-8 flex flex-wrap gap-x-6 gap-y-2 lg:mt-0"
+        >
+          <li className="font-mono text-base sm:text-sm">
+            <ExternalLink href={profile.github}>GitHub</ExternalLink>
+          </li>
+          <li className="font-mono text-base sm:text-sm">
+            <a
+              href={`mailto:${profile.email}`}
+              className="underline decoration-neutral-300 underline-offset-4 hover:decoration-accent dark:decoration-neutral-600 dark:hover:decoration-accent"
+            >
+              Email
+            </a>
+          </li>
+          <li className="font-mono text-base sm:text-sm">
+            <Link
+              href="/bio"
+              className="underline decoration-neutral-300 underline-offset-4 hover:decoration-accent dark:decoration-neutral-600 dark:hover:decoration-accent"
+            >
+              Full bio
+            </Link>
+          </li>
+        </ul>
+      </header>
 
-        <section className="mt-20 sm:mt-24">
+      <main className="pb-16 lg:w-3/5 lg:py-24">
+        <section id="about" className="scroll-mt-16 pt-16 sm:pt-24 lg:pt-0">
           <SectionHeading>About</SectionHeading>
-          <div className="mt-6 space-y-5">
+          <div className="mt-6 space-y-5 lg:mt-0">
             {about.map((paragraph) => (
               <p
                 key={paragraph.slice(0, 32)}
@@ -74,39 +97,32 @@ export default function Home() {
                 {paragraph}
               </p>
             ))}
+            <p className="max-w-[64ch] text-base/7 text-pretty text-neutral-700 dark:text-neutral-300">
+              If you want the unabridged version, there&apos;s a{" "}
+              <Link
+                href="/bio"
+                className="underline decoration-neutral-300 underline-offset-4 hover:decoration-accent dark:decoration-neutral-600 dark:hover:decoration-accent"
+              >
+                full bio
+              </Link>
+              . If you&apos;d rather poke around: this site has at least three
+              easter eggs, and the browser console is a good place to start.
+            </p>
           </div>
         </section>
 
-        <section className="mt-20 sm:mt-24">
-          <SectionHeading>Strong opinions</SectionHeading>
-          <ul
-            role="list"
-            className="mt-6 max-w-[64ch] space-y-3 text-base/7 text-neutral-700 dark:text-neutral-300"
-          >
-            {opinions.map((opinion) => (
-              <li key={opinion} className="flex gap-x-4">
-                <span
-                  aria-hidden="true"
-                  className="font-mono text-neutral-400 select-none dark:text-neutral-600"
-                >
-                  &gt;
-                </span>
-                {opinion}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="mt-20 sm:mt-24">
-          <SectionHeading>Career</SectionHeading>
+        <section id="experience" className="scroll-mt-16 pt-20 sm:pt-24">
+          <SectionHeading>Experience</SectionHeading>
           <ol
             role="list"
-            className="mt-2 divide-y divide-neutral-950/5 dark:divide-white/10"
+            className="mt-2 divide-y divide-neutral-950/5 lg:mt-0 dark:divide-white/10"
           >
-            {career.map((role) => (
+            {career.map((role, index) => (
               <li
                 key={`${role.title} ${role.period}`}
-                className="grid gap-y-2 py-8 first:pt-6 last:pb-0 sm:grid-cols-[10rem_1fr] sm:gap-x-8"
+                className={`grid gap-y-2 py-8 last:pb-0 sm:grid-cols-[9rem_1fr] sm:gap-x-8 ${
+                  index === 0 ? "pt-6 lg:pt-0" : ""
+                }`}
               >
                 <p className="font-mono text-base text-neutral-500 tabular-nums sm:text-sm/6 dark:text-neutral-400">
                   {role.period}
@@ -121,6 +137,7 @@ export default function Home() {
                   <p className="mt-2 max-w-[60ch] text-base/7 text-pretty text-neutral-700 sm:text-sm/6 dark:text-neutral-300">
                     {role.summary}
                   </p>
+                  <TechList tech={role.tech} />
                 </div>
               </li>
             ))}
@@ -130,14 +147,17 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="mt-20 sm:mt-24">
-          <SectionHeading>Side projects</SectionHeading>
+        <section id="projects" className="scroll-mt-16 pt-20 sm:pt-24">
+          <SectionHeading>Projects</SectionHeading>
           <ul
             role="list"
-            className="mt-2 divide-y divide-neutral-950/5 dark:divide-white/10"
+            className="mt-2 divide-y divide-neutral-950/5 lg:mt-0 dark:divide-white/10"
           >
-            {projects.map((project) => (
-              <li key={project.name} className="py-8 first:pt-6 last:pb-0">
+            {projects.map((project, index) => (
+              <li
+                key={project.name}
+                className={`py-8 last:pb-0 ${index === 0 ? "pt-6 lg:pt-0" : ""}`}
+              >
                 <h3 className="text-base font-semibold">
                   {project.url ? (
                     <ExternalLink href={project.url}>
@@ -160,19 +180,20 @@ export default function Home() {
             <p className="font-mono text-base text-neutral-500 sm:text-sm dark:text-neutral-400">
               © {new Date().getFullYear()} {profile.name}
             </p>
-            <ul role="list" className="flex flex-wrap gap-x-6">
-              <li className="font-mono text-base sm:text-sm">
-                <ExternalLink href={profile.github}>GitHub</ExternalLink>
-              </li>
-              <li className="font-mono text-base sm:text-sm">
-                <ExternalLink href="https://prioboard.app">
-                  Prioboard
-                </ExternalLink>
-              </li>
+            <ul role="list" className="flex flex-wrap items-baseline gap-x-6">
               <li className="font-mono text-base sm:text-sm">
                 <ExternalLink href="https://github.com/joesaunderson/joesaunderson">
                   Source
                 </ExternalLink>
+              </li>
+              <li className="font-mono text-base sm:text-sm">
+                <Link
+                  href="/fishing"
+                  aria-label="Gone fishing"
+                  className="text-neutral-400 hover:text-accent dark:text-neutral-600 dark:hover:text-accent"
+                >
+                  {"><> "}
+                </Link>
               </li>
             </ul>
           </div>

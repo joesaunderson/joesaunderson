@@ -19,12 +19,3 @@ Strong opinions:
 - An agent should be doing this, and if it isn't, that's a backlog item
 
 More at [joesaunderson.co.uk](https://joesaunderson.co.uk), which is this repo.
-
-## The site
-
-Next.js (App Router) + Tailwind CSS v4, deployed on Vercel. All content lives in [`data/site.ts`](data/site.ts).
-
-```bash
-pnpm install
-pnpm dev
-```
