@@ -10,7 +10,6 @@ Lately:
 - Rebuilt our development lifecycle around agentic AI (Claude Code, MCP, agent skills); output per engineer runs at 3x baseline, and yes, I measured it
 - Took an AI product from first commit to revenue in eight weeks
 - Building [Prioboard](https://prioboard.app), a prioritisation lens on Linear
-- Contributing to [PostHog](https://github.com/PostHog/posthog)
 
 Strong opinions:
 
