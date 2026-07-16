@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
+import { EasterEggs } from "../components/easter-eggs";
+import { Spotlight } from "../components/spotlight";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://joesaunderson.co.uk"),
-  title: "Joe Saunderson",
+  title: {
+    default: "Joe Saunderson",
+    template: "%s · Joe Saunderson",
+  },
   description:
     "Head of Engineering at Mention Me, based in Kent. I like to get shit done.",
   openGraph: {
@@ -24,7 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className="antialiased">
       <body className="isolate bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+        <Spotlight />
         {children}
+        <EasterEggs />
       </body>
     </html>
   );
